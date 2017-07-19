@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Questão1</string>
+    <string name="saudacao">Seja bem vindo! </string>
+    <string name="titulo">Surpresa</string>
+    <string name="surpreenda_me">Surpreenda-me</string>
+    <string name="nome_aluno">Nome do aluno</string>
+    <string name="app_aluno">Cadastrar </string>
+</resources>

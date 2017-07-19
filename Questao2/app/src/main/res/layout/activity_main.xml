@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="50dp"
+    android:orientation="vertical"
+    tools:context="ifpb.edu.com.br.questao2.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.43"
+            android:text="Adultos"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Crianças"
+            android:textSize="27sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <EditText
+            android:id="@+id/edText_adulto"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.48"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editText_crianca"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.26"
+            android:ems="10"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_resposta"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="50dp"
+        android:text="Calcular" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.43"
+            android:text="Resultado"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.43"
+            android:text="O que você prescisa para a festa:"
+            android:textSize="14sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cake" />
+
+                <TextView
+                    android:id="@+id/textBolo"
+                    android:layout_weight="0.43"
+                    android:text=""
+                    style="@style/meu_estilo"/>
+                <TextView
+                    android:id="@+id/textBolo_D"
+
+                    android:layout_weight="0.43"
+                    android:text="Kg Bolo"
+                    style="@style/meu_estilo"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/cupcake" />
+                <TextView
+                    android:id="@+id/textDoce"
+                    android:layout_weight="0.43"
+                    android:text=""
+                    style="@style/meu_estilo"/>
+                <TextView
+                    android:id="@+id/textDoce_D"
+                    android:layout_weight="0.43"
+                    android:text="unidade de doces"
+                    style="@style/meu_estilo"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/sandwich" />
+                <TextView
+                    android:id="@+id/textSalgado"
+                    android:layout_weight="0.43"
+                    android:text=""
+                    style="@style/meu_estilo"/>
+                <TextView
+                    android:id="@+id/textSalgado_D"
+                    android:layout_weight="0.43"
+                    android:text="unidade de salgados"
+                    style="@style/meu_estilo"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/soda" />
+                <TextView
+                    android:id="@+id/textSoda"
+                    android:layout_weight="0.43"
+                    android:text=""
+                    style="@style/meu_estilo"/>
+                <TextView
+                    android:id="@+id/textSoda_D"
+                    android:layout_weight="0.43"
+                    android:text="litros de refrigerante"
+                    style="@style/meu_estilo"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
