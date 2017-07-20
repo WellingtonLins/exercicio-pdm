@@ -4,6 +4,9 @@
 
     <!--A permissão de acessar a internet,necessária para o download  da imagem -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--permmissão para salvar a imagem-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--declarando o servico-->
+        <service
+            android:name="ifpb.edu.com.br.questao4.Auxiliar">
+        </service>
     </application>
 
 </manifest>

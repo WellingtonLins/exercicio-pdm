@@ -5,35 +5,65 @@ package ifpb.edu.com.br.questao4;
  */
 
 
+import android.app.IntentService;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Environment;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- * Classe responsável por baixar a imagem
- * Por conter um método estático, essa classe não precisa ser instanciada para
- * acessar o método baixarImagem. Aqui é definida a URL que contém a imagem e
- * seu endereço é passado por parâmetro. Um objeto do tipo InputStream é responsável por
- * receber as informações da imagem, que por enquanto ainda está codificada.
- * Por fim, o objeto do tipo Bitmap recebe o retorno do método estático decodeStream
- * contido dentro da classe BitmapFactory, que é responsável por converter para Bitmap
- * o conteudo do inputStream.
+ * Utilizando o IntentService, a operação ocorre sem estar vinculada a nenhuma Activity.
+ * Assim usuário não precisa ficar esperando o download terminar, como é uma imagem pequena
+ * o download é instantaneo, mas  se fosse um filme  isso levaria muito tempo.
+ * Esta classe faz todo o trabalho  em background sem fazer o usuario ficar esperando
+ * pelo termino do download para fazer outra atividade
  */
-  public class Auxiliar {
-    public static Bitmap baixarImagem(String url) throws IOException {
-        URL endereco;
-        InputStream inputStream;
-        Bitmap imagem;
+public class Auxiliar extends IntentService {
+    String name;
 
-        endereco = new URL(url);
-        inputStream = endereco.openStream();
-        imagem = BitmapFactory.decodeStream(inputStream);
+    public Auxiliar() {
+        super("MyService");
+    }
 
-        inputStream.close();//conexão encerrada
+    /**
+     *Método de implementação obrigatoria!
+     * Aqui é feito toda a parte de busca e download da imagem
+     * a partir de uma url
+     */
+    @Override
+    protected void onHandleIntent(Intent intent) {
+        String img_url = intent.getStringExtra("image_url");
+        String fileName = intent.getStringExtra("file_name");
+        try {
 
-        return imagem;
+            URL endereco;
+            InputStream inputStream;
+            Bitmap imagem;
+
+            endereco = new URL(img_url);
+            inputStream = endereco.openStream();
+            imagem = BitmapFactory.decodeStream(inputStream);//obtendo a imagem
+
+            File SDCardRoot = Environment.getExternalStorageDirectory();
+            File file = new File(SDCardRoot, fileName);//local, nome_do_Arquivo
+            FileOutputStream fileOutput = new FileOutputStream(file);
+//            salvando a nossa querida imagem, 5 horas de pesquisa...
+            imagem.compress(Bitmap.CompressFormat.PNG, 100, fileOutput);//formato , qualidade, arquivo
+
+            fileOutput.close();
+            inputStream.close();//conexão encerrada
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
