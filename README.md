@@ -7,7 +7,7 @@ IFPB Campus Cajazerias
 Professor da disciplina Aristofânio Garcia
 ## Getting Started   
 
-Antes de tudo obtenha o `Android Studio`    ![alt text](https://www.google.com.br/imgres?imgurl=http%3A%2F%2Flowendguru.com%2Fwp-content%2Fuploads%2Fandroid-smartphone1.jpg&imgrefurl=http%3A%2F%2Flowendguru.com%2Ftag%2Fandroid%2F&docid=NiVLXn9gw3XAbM&tbnid=J-iUURhidlXcjM%3A&vet=10ahUKEwj5__Hoi6PXAhWMkpAKHbF-BWcQMwhUKCQwJA..i&w=640&h=384&bih=637&biw=1366&q=android%20images&ved=0ahUKEwj5__Hoi6PXAhWMkpAKHbF-BWcQMwhUKCQwJA&iact=mrc&uact=8 "Android")
+Antes de tudo obtenha o `Android Studio`    ![alt text](http://lowendguru.com/wp-content/uploads/android-smartphone1.jpg "Android")
 
 
 
